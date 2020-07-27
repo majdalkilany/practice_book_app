@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% data.forEach(data=>{ %>
+
+<h3><%= data.title%></h3>
+
+<img src="<%= data.img%>" alt="">
+
+<h5><%= data.authors%></h5>
+
+<p><%= data.description%></p>
+
+<form action="/add" method="post">
+<input type="hidden" name="title" value="<%= data.title%>">
+<input type="hidden" name="authors" value="<%= data.authors%>">
+<input type="hidden" name="img" value="<%= data.img%>">
+<input type="hidden" name="description" value="<%= data.description%>">
+<input type="submit" value="add to favorite">
+
+</form>
+
+
+        <%}) %> 
+</body>
+</html>
